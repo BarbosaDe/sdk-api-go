@@ -2,6 +2,7 @@ package blobservices
 
 import (
 	"github.com/squarecloudofc/sdk-api-go/rest"
+	"github.com/squarecloudofc/sdk-api-go/squarecloud"
 )
 
 type ObjectService interface {
@@ -11,7 +12,7 @@ type ObjectService interface {
 }
 
 type AccountService interface {
-	Metrics()
+	Metrics() (*squarecloud.APIResponse[squarecloud.BlobMetrics], error)
 }
 
 type ObjectServiceImpl struct {
