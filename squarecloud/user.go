@@ -33,3 +33,21 @@ type Snapshot struct {
 	Modified time.Time `json:"modified"`
 	Key      string    `json:"key"`
 }
+
+type BlobMetrics struct {
+	Usage struct {
+		Objects int `json:"objects"`
+		Storage int `json:"storage"`
+	} `json:"usage"`
+
+	Plan struct {
+		Included int `json:"included"`
+	} `json:"plan"`
+
+	Billing struct {
+		ExtraStorage  int `json:"extraStorage"`
+		StoragePrice  int `json:"storagePrice"`
+		ObjectsPrice  int `json:"objectsPrice"`
+		TotalEstimate int `json:"totalEstimate"`
+	}
+}

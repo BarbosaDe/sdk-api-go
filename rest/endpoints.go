@@ -7,6 +7,9 @@ import (
 var (
 	APIVersion = 2
 	APIURL     = fmt.Sprintf("https://api.squarecloud.app/v%d", APIVersion)
+
+	BLOBAPIVersion = 1
+	BLOBAPIURL     = fmt.Sprintf("https://blob.squarecloud.app/v%d", BLOBAPIVersion)
 )
 
 var (
@@ -42,4 +45,8 @@ var (
 	// Application Network
 	EndpointApplicationNetwork      = func(appID string) string { return fmt.Sprintf("/apps/%s/network/analytics", appID) }
 	EndpointApplicationCustomDomain = func(appID, domain string) string { return fmt.Sprintf("/apps/%s/network/custom/%s", appID, domain) }
+
+	// Blob
+	EndpointBlobObject  = func() string { return "/objects" }
+	EndpointBlobMetrics = func() string { return "/account/stats" }
 )
