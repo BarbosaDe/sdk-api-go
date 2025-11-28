@@ -8,7 +8,7 @@ import (
 type ObjectService interface {
 	Upload()
 	List()
-	Delete()
+	Delete(objectId string) (*squarecloud.APIResponse[any], error)
 }
 
 type AccountService interface {
