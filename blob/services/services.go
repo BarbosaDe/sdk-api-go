@@ -7,7 +7,7 @@ import (
 
 type ObjectService interface {
 	Upload()
-	List()
+	List(config *squarecloud.ObjectSearchParameters) (*squarecloud.APIResponse[squarecloud.ListObject], error)
 	Delete(objectId string) (*squarecloud.APIResponse[any], error)
 }
 
